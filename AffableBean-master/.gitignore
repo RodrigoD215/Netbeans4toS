@@ -1,0 +1,8 @@
+/nbproject/private
+/dist
+/build
+*.mwb
+*.mwb.bak
+*.pdf
+*.svg
+*.png

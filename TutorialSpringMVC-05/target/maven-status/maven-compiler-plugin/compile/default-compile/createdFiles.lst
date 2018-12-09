@@ -1,0 +1,5 @@
+net\codigoalonso\controllers\HomeController.class
+net\codigoalonso\model\User.class
+net\codigoalonso\config\RootConfig.class
+net\codigoalonso\config\TutorialWebAppInitializer.class
+net\codigoalonso\config\WebConfig.class

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Formulario
+    <hr />
+       <h:form>
+        <h3>Matricula a cursos:</h3>
+        <h:graphicImage width="330" height="200" value = "/imagenes/d.jpg"/>
+        <br />
+        <h:outputText id="lblusuario" value="Nombres y apellidos:"></h:outputText>
+        <br />
+        <h:inputText id="txtusuario" value="#{datos.usuario}" required="true" requiredMessage="Campo Usuario es obligatorio"></h:inputText>
+        <br />
+        
+        <h:outputText id="depa" value="Departamentos:"></h:outputText>   <br />
+        <h:selectOneListbox id="departamentos1" value="#{datos.departamentos1}">
+            <f:selectItem itemValue="Dpto Informatica" itemLabel="Dpto Informatica"/>
+            <f:selectItem itemValue="Dpto Pesada" itemLabel="Dpto Pesada"/>
+            <f:selectItem itemValue="Dpto Procesos Mineros" itemLabel="Dpto Procesos Mineros"/>
+            <f:selectItem itemValue="Dpto Electrotecnia" itemLabel="Dpto Electrotecnia"/>
+            <f:selectItem itemValue="Dpto Estudios Generales" itemLabel="Dpto Estudios Generales"/>
+            <f:selectItem itemValue="Dpto Docencia" itemLabel="Dpto Docencia"/>
+         </h:selectOneListbox><br />
+         
+             <h:outputText id="desapa" value="Cursos"></h:outputText>   <br />
+        <h:selectManyListbox id="cursos1" value="#{datos.cursos}" required="true" requiredMessage="Debe elejir almenos uno..." readonly="false">
+             <f:selectItems value="#{datos.cursos1}"/> 
+        </h:selectManyListbox>
+        <br />
+
+        <h:outputText id="correo" value="Correo:"></h:outputText>
+        <br />
+        <h:inputText id="correo1" value="#{datos.correo}" required="true" requiredMessage="Campo correo es obligatorio"></h:inputText>
+        <br />
+        <h:outputText id="telefono" value="Telefono:"></h:outputText>
+        <br />
+        <h:inputText id="telefono1" value="#{datos.telefono}" required="true" requiredMessage="Campo telefono es obligatorio"></h:inputText>
+        <br />
+        
+                <h:outputText id="info" value="Informacion:"></h:outputText>
+        <h:selectManyCheckbox id="info2" value="#{datos.info}"
+                              required="true" requiredMessage="Debe seleccionar al menos un campo de informacion" border="1" readonly="false">
+         <f:selectItems value="#{datos.info1}" />
+         </h:selectManyCheckbox>
+        
+              <h:outputText id="dfd" value="¿Estas de acuerdo con las politicas?"></h:outputText>
+         <h:selectOneRadio id="politicas" value="#{datos.politicas}" required="true" requiredMessage="Decidase">   
+             <f:selectItem itemValue="si" itemLabel="Si"/>
+             <f:selectItem itemValue="no" itemLabel="No"/>
+        </h:selectOneRadio>
+     
+        
+       <h:commandButton id="btnautenticar" value="Generar Cuadro" type="submit" action="resultados"></h:commandButton>
+       </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,20 @@
+# config context path to "/" by setting an empty string
+
+spring.profiles: default
+# JACKSON
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+
+spring.datasource:
+  url: "jdbc:h2:mem:testdb"
+  driverClassName: org.h2.Driver
+  username: sa
+  password: ""
+  data: "classpath*:data.sql"
+
+spring.jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled: true
